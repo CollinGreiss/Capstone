@@ -3,11 +3,11 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class CapstoneServerTarget : TargetRules
+public class CapstoneEditorTarget : TargetRules
 {
-	public CapstoneServerTarget( TargetInfo Target) : base(Target)
+	public CapstoneEditorTarget( TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Server;
+		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 
 		ExtraModuleNames.AddRange( new string[] { "Capstone" } );
