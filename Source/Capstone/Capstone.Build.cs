@@ -14,6 +14,12 @@ public class Capstone : ModuleRules
 
         PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+
+        string VcpkgPath = "C:/tools/vcpkg/installed/x64-windows";
+
+        PublicSystemIncludePaths.Add( Path.Combine( VcpkgPath, "include" ) );
+        PublicAdditionalLibraries.Add( Path.Combine( VcpkgPath, "lib", "libcrypto.lib" ) );
+
         // Uncomment if you are using Slate UI
         // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
