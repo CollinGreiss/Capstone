@@ -5,11 +5,27 @@ using System.Collections.Generic;
 
 public class CapstoneEditorTarget : TargetRules
 {
-	public CapstoneEditorTarget( TargetInfo Target) : base(Target)
+	public CapstoneEditorTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Editor;
-		DefaultBuildSettings = BuildSettingsVersion.V5;
+        DefaultBuildSettings = BuildSettingsVersion.Latest; // V5
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 
-		ExtraModuleNames.AddRange( new string[] { "Capstone" } );
-	}
+        Type = TargetType.Editor;
+        ExtraModuleNames.AddRange(new string[] { "Capstone" });
+		//bUseUnityBuild = false;
+		//bUsePCHFiles = false;
+    }
+
+	//
+	// TargetRules interface.
+	//
+
+/*	public override void SetupBinaries(
+		TargetInfo Target,
+		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
+		ref List<string> OutExtraModuleNames
+		)
+	{
+		OutExtraModuleNames.AddRange( new string[] { "Capstone" } );
+	}*/
 }

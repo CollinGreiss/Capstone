@@ -3,17 +3,17 @@
 using System.IO;
 using UnrealBuildTool;
 
-public class Capstone : ModuleRules
-{
-	public Capstone(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+public class Capstone : ModuleRules {
 
-        PublicDependencyModuleNames.AddRange( new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Http", "Json", "JsonUtilities" } );
+    public Capstone( ReadOnlyTargetRules Target ) : base( Target ) {
 
+        //SetupIrisSupport(Target);
 
-        PrivateDependencyModuleNames.AddRange(new string[] {  });
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        // PrivatePCHHeaderFile = "Private/WindowsMixedRealityPrecompiled.h";
 
+        PublicDependencyModuleNames.AddRange( new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Http", "Json", "JsonUtilities", "AdvancedSessions", "VRExpansionPlugin" } );
+        PrivateDependencyModuleNames.AddRange( new string[] { } );
 
         string VcpkgPath = "C:/tools/vcpkg/installed/x64-windows";
 
@@ -29,4 +29,5 @@ public class Capstone : ModuleRules
         // To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 
     }
+
 }
